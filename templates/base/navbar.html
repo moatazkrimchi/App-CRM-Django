@@ -1,0 +1,26 @@
+
+{% load static %}
+<Link rel="stylesheet" type="text/css" href="{% static 'css/navbar.css' %}">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <div class="cat">
+      <img src="{% static 'images/logo.png' %}">
+    </div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/acceuil">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'list_produit' %}">Produit</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <span style="color: white">Bonjour ! {{request.user}}</span>
+  <span style="margin-right: 10px"><a href="{% url 'quitter' %}">Quitter</a></span>
+</nav>
